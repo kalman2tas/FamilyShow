@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inheritance__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT( ISBLANK(Father__c) ) &amp;&amp; NOT( ISBLANK(Mother__c) ), &apos;I am &apos; + Father__r.Name +&apos;s and &apos; + Mother__r.Name+&apos;s &apos; + IF(TEXT( Gender__c ) == &apos;Male&apos;, &apos;Son&apos;, &apos;Daughter&apos;), 
+ 
+IF( NOT( ISBLANK(Father__c) ), 
+		&apos;I am &apos; + Father__r.Name +&apos;s &apos; + IF(TEXT( Gender__c ) == &apos;Male&apos;, &apos;Son&apos;, &apos;Daughter&apos;), IF( NOT( ISBLANK(Mother__c) ), 
+			&apos;I am &apos; + Mother__r.Name +&apos;s &apos; + IF(TEXT( Gender__c ) == &apos;Male&apos;, &apos;Son&apos;, &apos;Daughter&apos;),
+			
+			&apos;&apos;)) )</formula>
+    <label>Inheritance</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
